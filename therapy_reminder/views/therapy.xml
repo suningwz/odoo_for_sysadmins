@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+  <record id="view_therapy_tree" model="ir.ui.view">
+    <field name="name">view.therapy.tree</field>
+    <field name="model">therapy.therapy</field>
+    <field name="arch" type="xml">
+      <tree string="Therapy">
+        <field name="name"/>
+        <field name="birthday_date"/>
+        <field name="genre"/>
+      </tree>
+    </field>
+  </record>
+
+  <record id="view_therapy_form" model="ir.ui.view">
+    <field name="name">view.therapy.form</field>
+    <field name="model">therapy.therapy</field>
+    <field name="arch" type="xml">
+      <form string="Therapy">
+        <sheet string="Therapy">
+          <group name="Medication">
+            <group name="left">
+              <field name="name"/>
+              <field name="birthday_date"/>
+              <field name="genre"/>
+            </group>
+            <group name="right">
+              <field name="image"/>
+            </group>
+          </group>
+          <notebook>
+            <page string="Medicaments">
+              <page string="Therapy">
+                <group string="Medical treatment">
+                  <field name="medicament_ids"/>
+                </group>
+              </page>
+            </page>
+          </notebook>
+        </sheet>
+        <div class="oe_chatter">
+          <field name="message_follower_ids" widget="mail_followers"/>
+          <field name="activity_ids" widget="mail_activity"/>
+          <field name="message_ids" widget="mail_thread" options="{'post_refresh': 'recipients'}"/>
+      </div>
+      </form>
+    </field>
+  </record>
+
+  <record id="therapy_action" model="ir.actions.act_window">
+    <field name="name">Therapy</field>
+    <field name="res_model">therapy.therapy</field>
+    <field name="view_mode">tree,form</field>
+    <field name="help" type="html">
+      <p class="oe_view_nocontent_create">
+        Create your first therapy
+      </p>
+    </field>
+  </record>
+
+  <menuitem
+    id="therapy_root_menu"
+    name="Therapy"
+    sequence="10"
+    web_icon="therapy_reminder,static/description/icon.png"/>
+  
+  <menuitem
+    id="therapy_main_menu"
+    name="Therapies"
+    parent="therapy_root_menu"
+    sequence="10"/>
+
+  <menuitem
+    id="therapy_sub_menu"
+    name="Therapy"
+    parent="therapy_main_menu"
+    action="therapy_action"
+    sequence="10"/>
+
+</odoo>
