@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from odoo import _, api, fields, models
+import datetime
 
 
 class TherapyTimetable(models.Model):
@@ -51,3 +52,7 @@ class Therapy(models.Model):
                                       column1='name',
                                       column2='quantity',
                                       string='Medicaments')
+
+    @api.model
+    def _check_timetable(self):
+        pass
