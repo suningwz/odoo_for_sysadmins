@@ -55,4 +55,9 @@ class Therapy(models.Model):
 
     @api.model
     def _check_timetable(self):
-        pass
+        # This code is an atrocity, fix it next time
+        patients = self.env['therapy.therapy'].search([])
+        for rec in patients:
+            for med in rec.medicament_ids:
+                for hours in med.timetable:
+                    print(hours.hour)
