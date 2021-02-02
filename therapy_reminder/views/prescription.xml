@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- therapy.prescription tree view -->
+    <record id="therapy_prescription_view_tree" model="ir.ui.view">
+        <field name="name">therapy.prescription.view.tree</field>
+        <field name="model">therapy.prescription</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="patient_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- therapy.prescription form view -->
+    <record id="therapy_prescription_view_form" model="ir.ui.view">
+        <field name="name">therapy.prescription.view.form</field>
+        <field name="model">therapy.prescription</field>
+        <field name="arch" type="xml">
+            <form string="prescription">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="patient_id"/>
+                    </group>
+                    <notebook>
+                        <page name="medicaments" string="Medicaments">
+                            <field name="medicament_ids"/>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="therapy_prescription_action" model="ir.actions.act_window">
+        <field name="name">Therapy prescriptions</field>
+        <field name="res_model">therapy.prescription</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                Add your first prescription
+            </p>
+        </field>
+    </record>
+
+    <!-- This Menu Item will appear in the Upper bar, that's why It needs NO parent or action -->
+    <menuitem id="therapy_menu_root" name="Therapy" sequence="10"/>
+    <!-- This Menu Item Must have a parent -->
+    <menuitem id="therapy_menu_categ" name="Therapies" parent="therapy_menu_root" sequence="10"/>
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem id="therapy_menu_action" name="Therapy" parent="therapy_menu_categ" action="therapy_prescription_action" sequence="10"/>
+</odoo>

@@ -10,7 +10,7 @@
     <field name="interval_number">1</field>
     <field name="interval_type">minutes</field>
     <field name="numbercall">-1</field>
-    <field name="model_id" ref="therapy_reminder.model_therapy_therapy"/>
+    <field name="model_id" ref="therapy_reminder.model_therapy_prescription"/>
     <field name="state">code</field>
     <field name="code">model._check_timetable()</field>
   </record>

@@ -2,7 +2,7 @@
     'name':
     'Therapy reminder',
     'version':
-    '13.0.1.0.0',
+    '13.0.1.1.0',
     'summary':
     '''This app allows to set the personal therapy
      and get notifications to take it''',
@@ -20,16 +20,15 @@
         'juanma raistdev',
     ],
     'depends': [
-        'base',
+        'purchase',
         'mail',
     ],
     'data': [
         'security/therapy_security.xml',
         'security/ir.model.access.csv',
-        'views/therapy.xml',
-        'views/medicament.xml',
+        'views/prescription.xml',
         'views/timetable.xml',
-        'data/therapy_data.xml',
+        # 'data/therapy_data.xml',
     ],
     'installable':
     True,

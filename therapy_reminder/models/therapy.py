@@ -10,54 +10,46 @@ class TherapyTimetable(models.Model):
 
     hour = fields.Float(string='Hour')
     done = fields.Boolean(string='Done')
+    medicate_time_ids = fields.Many2many(
+        comodel_name='therapy.prescription',
+        relation='rel_therapy_prescription_timetable',
+        column1='timetable_ids',
+        column2='therapy_id',
+        string='Medicaments')
 
 
-class TherapyMedicament(models.Model):
-    _name = 'therapy.medicament'
-    _description = 'Medicament'
-
-    name = fields.Char(string='Medicament')
-    medicament_type = fields.Selection(string='Type',
-                                       selection=[
-                                           ('pill', 'Pill'),
-                                           ('granulated', 'Granulated'),
-                                           ('suppository', 'Suppository'),
-                                       ])
-    quantity = fields.Float(string='Quantity')
-    timetable = fields.Many2many(comodel_name='therapy.timetable',
-                                 relation='therapy_medicament_timetable',
-                                 column1='hour',
-                                 column2='done',
-                                 string='Timetable')
-
-
-class Therapy(models.Model):
-    _name = 'therapy.therapy'
-    _description = 'Therapy for personal use'
-    _inherit = ['mail.thread', 'mail.activity.mixin']
+class TherapyPrescription(models.Model):
+    _name = 'therapy.prescription'
+    _description = 'Prescription'
 
     def _default_user_id(self):
         return self.env.user
 
-    name = fields.Many2one(comodel_name='res.users',
-                           string='User',
-                           default=_default_user_id)
-    birthday_date = fields.Date(string='Birthday date')
-    genre = fields.Selection(string="Genre",
-                             selection=[('female', 'Female'),
-                                        ('male', 'Male')])
-    image = fields.Image(string='Image')
-    medicament_ids = fields.Many2many(comodel_name='therapy.medicament',
-                                      realtion='therapy_therapy_medicament',
-                                      column1='name',
-                                      column2='quantity',
-                                      string='Medicaments')
+    # name will be a computed field with a serial number + patient_id
+    name = fields.Char(string='Therapy reference')
+    patient_id = fields.Many2one(comodel_name='res.users',
+                                 string='User',
+                                 default=_default_user_id)
+    start_date = fields.Date(string='Start date')
+    end_date = fields.Date(string='End date')
+    medicament_ids = fields.One2many(comodel_name='product.template',
+                                     inverse_name='name',
+                                     string='Medicament')
 
-    @api.model
-    def _check_timetable(self):
-        # This code is an atrocity, fix it next time
-        patients = self.env['therapy.therapy'].search([])
-        for rec in patients:
-            for med in rec.medicament_ids:
-                for hours in med.timetable:
-                    print(hours.hour)
+    # timetable_ids will be in a table joining patient and product
+    # timetable_ids = fields.Many2many(
+    #     comodel_name='therapy.timetable',
+    #     relation='rel_therapy_prescription_timetable',
+    #     column1='therapy_id',
+    #     column2='timetable_ids',
+    #     string='Timetable')
+
+    # saving this method for later
+    # @api.model
+    # def _check_timetable(self):
+    #     # This code is an atrocity, fix it next time
+    #     patients = self.env['therapy.reminder'].search([])
+    #     for rec in patients:
+    #         for med in rec.medicament_ids:
+    #             for hours in med.timetable_ids:
+    #                 print(hours.hour)
