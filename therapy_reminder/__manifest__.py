@@ -27,7 +27,7 @@
         'security/therapy_security.xml',
         'security/ir.model.access.csv',
         'views/prescription.xml',
-        'views/timetable.xml',
+        # 'views/timetable.xml',
         # 'data/therapy_data.xml',
     ],
     'installable':

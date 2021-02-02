@@ -1,1 +1,1 @@
-from . import therapy
+from . import product_medicament, therapy
