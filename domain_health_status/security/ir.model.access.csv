@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_domain_health_status_domain_health_status,domain_health_status.domain_health_status,model_domain_health_status_domain_health_status,base.group_user,1,1,1,1

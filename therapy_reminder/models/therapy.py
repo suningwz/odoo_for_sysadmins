@@ -18,7 +18,7 @@ class TherapyPrescription(models.Model):
     start_date = fields.Date(string='Start date')
     end_date = fields.Date(string='End date')
     medicament_ids = fields.One2many(comodel_name='product.medicament',
-                                     inverse_name='name',
+                                     inverse_name='medicament_id',
                                      string='Medicament')
 
     # saving this method for later

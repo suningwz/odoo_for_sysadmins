@@ -1,0 +1,60 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+<!--
+    <record model="ir.ui.view" id="domain_health_status.list">
+      <field name="name">domain_health_status list</field>
+      <field name="model">domain_health_status.domain_health_status</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="value"/>
+          <field name="value2"/>
+        </tree>
+      </field>
+    </record>
+-->
+
+    <!-- actions opening views on models -->
+<!--
+    <record model="ir.actions.act_window" id="domain_health_status.action_window">
+      <field name="name">domain_health_status window</field>
+      <field name="res_model">domain_health_status.domain_health_status</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+-->
+
+    <!-- server action to the one above -->
+<!--
+    <record model="ir.actions.server" id="domain_health_status.action_server">
+      <field name="name">domain_health_status server</field>
+      <field name="model_id" ref="model_domain_health_status_domain_health_status"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": model._name,
+        }
+      </field>
+    </record>
+-->
+
+    <!-- Top menu item -->
+<!--
+    <menuitem name="domain_health_status" id="domain_health_status.menu_root"/>
+-->
+    <!-- menu categories -->
+<!--
+    <menuitem name="Menu 1" id="domain_health_status.menu_1" parent="domain_health_status.menu_root"/>
+    <menuitem name="Menu 2" id="domain_health_status.menu_2" parent="domain_health_status.menu_root"/>
+-->
+    <!-- actions -->
+<!--
+    <menuitem name="List" id="domain_health_status.menu_1_list" parent="domain_health_status.menu_1"
+              action="domain_health_status.action_window"/>
+    <menuitem name="Server to list" id="domain_health_status" parent="domain_health_status.menu_2"
+              action="domain_health_status.action_server"/>
+-->
+  </data>
+</odoo>

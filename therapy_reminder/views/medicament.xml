@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+  <!-- therapy.medicament form view -->
+  <record id="model_name_view_form" model="ir.ui.view">
+    <field name="name">product.medicament.view.form</field>
+    <field name="model">product.medicament</field>
+    <field name="arch" type="xml">
+      <form string="Medicament">
+        <sheet>
+          <group>
+            <field name="medicament_id"/>            
+          </group>
+          <noteboo>
+            <field name="timetable_ids"/>
+          </noteboo>
+        </sheet>
+      </form>
+    </field>
+  </record>
+
+  <!-- product.medicament tree view -->
+  <record id="model_name_view_tree" model="ir.ui.view">
+    <field name="name">product.medicament.view.tree</field>
+    <field name="model">product.medicament</field>
+    <field name="arch" type="xml">
+      <tree>
+        <field name="medicament_id"/>
+      </tree>
+    </field>
+  </record>
+
+  <!-- product.medicament action window -->
+  <record id="product_medicament_action" model="ir.actions.act_window">
+    <field name="name">product.medicament.action</field>
+    <field name="res_model">product.medicament</field>
+    <field name="view_mode">tree,form</field>
+    <field name="help" type="html">
+      <p class="oe_view_nocontent_create">
+        Add your first medicament!
+      </p>
+    </field>
+  </record>
+
+  <menuitem id="product_medicament_menu_action" name="Medicament" parent="therapy_menu_root" action="product_medicament_action" sequence="10"/>
+
+</odoo>

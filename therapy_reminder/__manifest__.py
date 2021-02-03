@@ -20,6 +20,7 @@
         'juanma raistdev',
     ],
     'depends': [
+        'base',
         'purchase',
         'mail',
     ],
@@ -27,7 +28,7 @@
         'security/therapy_security.xml',
         'security/ir.model.access.csv',
         'views/prescription.xml',
-        # 'views/timetable.xml',
+        'views/medicament.xml',
         # 'data/therapy_data.xml',
     ],
     'installable':
