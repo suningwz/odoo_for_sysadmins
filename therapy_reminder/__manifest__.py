@@ -22,6 +22,7 @@
     'depends': [
         'base',
         'purchase',
+        'purchase_product_matrix',
         'mail',
     ],
     'data': [

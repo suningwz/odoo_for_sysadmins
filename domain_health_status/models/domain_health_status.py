@@ -17,3 +17,6 @@ class ModuleName(models.Model):
                                              rec.website.split("//")[1])
                     if not_response:
                         print("Mal asunto")
+                        mail_template = self.env.ref(
+                            'domain_health_status.domain_health_status_alert')
+                        mail_template.send(self.id, force_send=True)
