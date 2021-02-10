@@ -7,12 +7,8 @@ class TherapyTimetable(models.Model):
 
     hour = fields.Float(string='Hour')
     done = fields.Boolean(string='Done')
-    medicament_timetable_ids = fields.Many2many(
-        comodel_name='therapy.prescription',
-        relation='rel_therapy_prescription_timetable',
-        column1='medicament_timetable_ids',
-        column2='therapy_id',
-        string='Medicaments')
+    therapy_id = fields.Many2one(comodel_name='product.medicament',
+                                 string='Therapy')
 
 
 class ProductMedicament(models.Model):
@@ -22,10 +18,6 @@ class ProductMedicament(models.Model):
     _inherit = ['mail.thread', 'mail.activity.mixin']
 
     medicament_id = fields.Char(string='Medicament')
-
-    timetable_ids = fields.Many2many(
-        comodel_name='therapy.timetable',
-        relation='rel_therapy_prescription_timetable',
-        column1='therapy_id',
-        column2='medicament_timetable_id',
-        string='Timetable')
+    timetable_ids = fields.One2many(comodel_name='therapy.timetable',
+                                    inverse_name='therapy_id',
+                                    string='Timetable')

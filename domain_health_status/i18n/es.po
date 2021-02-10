@@ -1,0 +1,125 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* domain_health_status
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 13.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-02-05 16:45+0000\n"
+"PO-Revision-Date: 2021-02-05 16:45+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: domain_health_status
+#: model:mail.template,body_html:domain_health_status.domain_health_status_notification_email_template
+msgid ""
+"\n"
+"         \n"
+"        <div style=\"margin: 0px; padding: 0px;\">\n"
+"          <p style=\"margin: 0px; padding: 0px; font-size: 13px;\">\n"
+"            Dear ${object.name},\n"
+"          </p>\n"
+"          <p style=\"margin: 0px; padding: 0px; font-size: 13px;\">\n"
+"            Service has been <span style=\"color: green;\">restablished</span>.\n"
+"          </p>\n"
+"          <p style=\"margin: 0px; padding: 0px; font-size: 13px;\">\n"
+"            Have a nice day :),\n"
+"          </p>\n"
+"        </div>\n"
+"        \n"
+"      "
+msgstr ""
+"\n"
+"         \n"
+"        <div style=\"margin: 0px; padding: 0px;\">\n"
+"          <p style=\"margin: 0px; padding: 0px; font-size: 13px;\">\n"
+"            Estimados ${object.name},\n"
+"          </p>\n"
+"          <p style=\"margin: 0px; padding: 0px; font-size: 13px;\">\n"
+"            El servicio ha sido <span style=\"color: green;\">reestablecido</span>.\n"
+"          </p>\n"
+"          <p style=\"margin: 0px; padding: 0px; font-size: 13px;\">\n"
+"            Que tengan un buen día!,\n"
+"          </p>\n"
+"        </div>\n"
+"        \n"
+"      "
+
+#. module: domain_health_status
+#: model:mail.template,body_html:domain_health_status.domain_health_status_alert_email_template
+msgid ""
+"\n"
+"         \n"
+"        <div style=\"margin: 0px; padding: 0px;\">\n"
+"          <p style=\"margin: 0px; padding: 0px; font-size: 13px;\">\n"
+"            Dear ${object.name},\n"
+"          </p>\n"
+"          <p style=\"margin: 0px; padding: 0px; font-size: 13px;\">\n"
+"            We have notified your domain is <span style=\"color: red;\">down</span> at this time.\n"
+"          </p>\n"
+"          <p style=\"margin: 0px; padding: 0px; font-size: 13px;\">\n"
+"            Please, contact with your domain provider as soon as possible.\n"
+"          </p>\n"
+"          <p style=\"margin: 0px; padding: 0px; font-size: 13px;\">\n"
+"            Best regards,\n"
+"          </p>\n"
+"        </div>\n"
+"        \n"
+"      "
+msgstr ""
+"\n"
+"         \n"
+"        <div style=\"margin: 0px; padding: 0px;\">\n"
+"          <p style=\"margin: 0px; padding: 0px; font-size: 13px;\">\n"
+"            Estimados ${object.name},\n"
+"          </p>\n"
+"          <p style=\"margin: 0px; padding: 0px; font-size: 13px;\">\n"
+"            Hemos notificado que vuestro dominio está <span style=\"color: red;\">caido</span> en estos momentos.\n"
+"          </p>\n"
+"          <p style=\"margin: 0px; padding: 0px; font-size: 13px;\">\n"
+"            Por favor, contactad con vuestro proveedor del dominio tan pronto como sea posible.\n"
+"          </p>\n"
+"          <p style=\"margin: 0px; padding: 0px; font-size: 13px;\">\n"
+"            Saludos,\n"
+"          </p>\n"
+"        </div>\n"
+"        \n"
+"      "
+#. module: domain_health_status
+#: model:ir.model.fields,field_description:domain_health_status.field_res_partner__check_domain
+#: model:ir.model.fields,field_description:domain_health_status.field_res_users__check_domain
+msgid "Check domain?"
+msgstr "Comprobar dominio?"
+
+#. module: domain_health_status
+#: model:ir.model,name:domain_health_status.model_res_partner
+msgid "Contact"
+msgstr "Contacto"
+
+#. module: domain_health_status
+#: model:mail.template,subject:domain_health_status.domain_health_status_alert_email_template
+msgid "Domain down: Alert!!!"
+msgstr "Dominio caido: Alerta!!!"
+
+#. module: domain_health_status
+#: model:ir.model.fields,field_description:domain_health_status.field_res_partner__domain_status
+#: model:ir.model.fields,field_description:domain_health_status.field_res_users__domain_status
+msgid "Domain status"
+msgstr "Estado del dominio"
+
+#. module: domain_health_status
+#: model:mail.template,subject:domain_health_status.domain_health_status_notification_email_template
+msgid "Service restablished"
+msgstr "Servicio reestablecido"
+
+#. module: domain_health_status
+#: model:ir.actions.server,name:domain_health_status.domain_health_status_ir_cron_ir_actions_server
+#: model:ir.cron,cron_name:domain_health_status.domain_health_status_ir_cron
+#: model:ir.cron,name:domain_health_status.domain_health_status_ir_cron
+msgid "domain.health.status.ir.cron"
+msgstr ""

@@ -32,9 +32,8 @@
     'data': [
         # 'security/ir.model.access.csv',
         'data/mail_alert_cron.xml',
-        # 'data/mail_alert.xml',
-        # 'views/views.xml',
-        # 'views/templates.xml',
+        'data/mail_alert.xml',
+        'data/mail_notification.xml',
         'views/domain_health_status.xml',
     ],
     # only loaded in demonstration mode

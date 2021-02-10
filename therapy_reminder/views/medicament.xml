@@ -20,7 +20,14 @@
             </page>
             <page string="Providers" name="providers">
               <group nolabel="1">
-
+                <field name="variant_seller_ids">
+                  <tree>
+                    <field name="company_id"/>
+                    <field name="product_code"/>
+                    <field name="product_name"/>
+                    <field name="product_uom"/>
+                  </tree>
+                </field>
               </group>
             </page>
           </notebook>
