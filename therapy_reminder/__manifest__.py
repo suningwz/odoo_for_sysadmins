@@ -30,6 +30,7 @@
         'security/ir.model.access.csv',
         'views/prescription.xml',
         'views/medicament.xml',
+        'views/timetable.xml',
         # 'data/therapy_data.xml',
     ],
     'installable':
