@@ -21,8 +21,10 @@
             <form string="prescription">
                 <sheet>
                     <group name="main">
-                        <field name="name"/>
+                        <field name="name" readonly="1"/>
                         <field name="patient_id"/>
+                        <field name="start_date"/>
+                        <field name="end_date"/>
                     </group>
                     <notebook>
                         <page name="medicaments" string="Medicaments">
