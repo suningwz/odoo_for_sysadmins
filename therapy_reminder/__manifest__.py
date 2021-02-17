@@ -31,7 +31,7 @@
         'views/prescription.xml',
         'views/medicament.xml',
         'views/timetable.xml',
-        # 'data/therapy_data.xml',
+        'data/therapy_data.xml',
     ],
     'installable':
     True,
