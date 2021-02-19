@@ -49,9 +49,21 @@ class TherapyPrescription(models.Model):
     def _check_timetable(self):
         patients = self.env['therapy.prescription'].search([])
         now_time = datetime.now().time()
-        now_is = now_time.hour + now_time.minute / 60
+        now_is = (now_time.hour + 1) + now_time.minute / 60
+        administrator = self.env['res.users'].search([('id', '=', '1')])
         for rec in patients:
             for med in rec.medicament_ids:
                 for hours in med.timetable_ids:
                     if round(hours.hour, 2) == round(now_is, 2):
                         print("bingo")
+                        # notification_ids = [(0, 0, {
+                        #     'res_partner_id': rec.id,
+                        #     'notification_type': 'inbox'
+                        # })]
+                        # self.message_post(
+                        #     body="It's time to take your medicament: %s" %
+                        #     med.name,
+                        #     message_type="notification",
+                        #     subtype="mail.mt_comment",
+                        #     author_id=administrator,
+                        #     notification_ids=notification_ids)
