@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_data_pwned_data_pwned,data_pwned.data_pwned,model_data_pwned_data_pwned,base.group_user,1,1,1,1
