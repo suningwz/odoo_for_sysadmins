@@ -21,7 +21,7 @@ class odoo_online_status(models.Model):
         for service in services:
             if isinstance(service.service_name, basestring) and isinstance(service.url, basestring):
                 status = requests.get(service.url)
-                if status == 200:
+                if status.ok:
                     if not service.service_status:
                         service.service_status = True
                 else:
