@@ -19,7 +19,7 @@ class odoo_online_status(models.Model):
         """ This method will be called from a cronjob """
         services = self.env['odoo_online_status'].search()
         for service in services:
-            if isinstance(service.service_name, basestring) and isinstance(service.url, basestring):
+            if isinstance(service.service_name, str) and isinstance(service.url, str):
                 status = requests.get(service.url)
                 if status.ok:
                     if not service.service_status:
