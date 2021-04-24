@@ -9,8 +9,8 @@ class OdooOnlineStatus(models.Model):
 
     service_name = fields.Char(required=True)
     url = fields.Char(required=True)
-    service_status = fields.Boolean(default=False)
-    last_update = fields.DateTime()
+    service_status = fields.Boolean(default=False, readonly=True)
+    last_update = fields.DateTime(readonly=True)
 
     @api.model
     def run(self):

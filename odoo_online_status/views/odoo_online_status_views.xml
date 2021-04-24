@@ -1,60 +1,55 @@
 <odoo>
-  <data>
-    <!-- explicit list view definition -->
-<!--
-    <record model="ir.ui.view" id="odoo_online_status.list">
-      <field name="name">odoo_online_status list</field>
-      <field name="model">odoo_online_status.odoo_online_status</field>
-      <field name="arch" type="xml">
-        <tree>
-          <field name="name"/>
-          <field name="value"/>
-          <field name="value2"/>
-        </tree>
-      </field>
-    </record>
--->
+  <!-- odoo_online_status form view -->
+  <record id="odoo_online_status_view_form" model="ir.ui.view">
+    <field name="name">odoo_online_status.view.form</field>
+    <field name="model">odoo_online_status</field>
+    <field name="arch" type="xml">
+      <form string="">
+        <sheet>
+          <group>
+            <field name="service_name"/>            
+            <field name="url"/>
+            <field name="service_status"/>
+            <field name="last_update"/>
+          </group>
+        </sheet>
+      </form>
+    </field>
+  </record>
 
-    <!-- actions opening views on models -->
-<!--
-    <record model="ir.actions.act_window" id="odoo_online_status.action_window">
-      <field name="name">odoo_online_status window</field>
-      <field name="res_model">odoo_online_status.odoo_online_status</field>
-      <field name="view_mode">tree,form</field>
-    </record>
--->
+  <!-- odoo_online_status tree view -->
+  <record id="odoo_online_status_view_tree" model="ir.ui.view">
+    <field name="name">odoo_online_status.view.tree</field>
+    <field name="model">odoo_online_status</field>
+    <field name="arch" type="xml">
+      <tree>
+        <field name="service_name"/>
+        <field name="service_status"/>
+        <field name="last_update"/>
+      </tree>
+    </field>
+  </record>
 
-    <!-- server action to the one above -->
-<!--
-    <record model="ir.actions.server" id="odoo_online_status.action_server">
-      <field name="name">odoo_online_status server</field>
-      <field name="model_id" ref="model_odoo_online_status_odoo_online_status"/>
-      <field name="state">code</field>
-      <field name="code">
-        action = {
-          "type": "ir.actions.act_window",
-          "view_mode": "tree,form",
-          "res_model": model._name,
-        }
-      </field>
-    </record>
--->
+  <!-- odoo_online_status action window -->
+  <record id="odoo_online_status_action" model="ir.actions.act_window">
+    <field name="name">odoo_online_status.action</field>
+    <field name="type">ir.actions.act_window</field>
+    <field name="res_model">odoo_online_status</field>
+    <field name="view_mode">tree,form</field>
+    <field name="view_type">form</field>
+    <field name="help" type="html">
+      <p class="oe_view_nocontent_create">
+        Add your first service!
+      </p><p>
+        For example, you can configure a healthchecks.io account.
+      </p>
+    </field>
+  </record>
 
-    <!-- Top menu item -->
-<!--
-    <menuitem name="odoo_online_status" id="odoo_online_status.menu_root"/>
--->
-    <!-- menu categories -->
-<!--
-    <menuitem name="Menu 1" id="odoo_online_status.menu_1" parent="odoo_online_status.menu_root"/>
-    <menuitem name="Menu 2" id="odoo_online_status.menu_2" parent="odoo_online_status.menu_root"/>
--->
-    <!-- actions -->
-<!--
-    <menuitem name="List" id="odoo_online_status.menu_1_list" parent="odoo_online_status.menu_1"
-              action="odoo_online_status.action_window"/>
-    <menuitem name="Server to list" id="odoo_online_status" parent="odoo_online_status.menu_2"
-              action="odoo_online_status.action_server"/>
--->
-  </data>
+  <!-- This Menu Item will appear in the Upper bar, that's why It needs NO parent or action -->
+  <menuitem id="odoo_online_status_menu_root" name="Sysadmin Tools" sequence="10"/>
+  <!-- This Menu Item Must have a parent -->
+  <menuitem id="odoo_online_status_menu_categ" name="Online Status" parent="odoo_online_status_menu_root" sequence="0"/>
+  <!-- This Menu Item must have a parent and an action -->
+  <menuitem id="odoo_online_status_menu_act" name="Status services" parent="odoo_online_status_menu_categ" action="odoo_online_status_action" sequence="0"/>
 </odoo>
