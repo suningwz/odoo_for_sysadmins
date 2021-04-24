@@ -1,11 +1,9 @@
--*- coding: utf-8 -*-
-
 from odoo import models, fields, api
 from datetime import datetime
 import requests
 
 
-class odoo_online_status(models.Model):
+class OdooOnlineStatus(models.Model):
     _name = 'odoo_online_status'
     _description = 'odoo_online_status'
 

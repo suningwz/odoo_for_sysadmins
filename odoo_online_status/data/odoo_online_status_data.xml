@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="ir_cron_online_status" model="ir.cron">
+            <field name="name">Online Status Ping</field>
+            <field name="model_id" ref="odoo_online_status.model_odoo_online_status"/>
+            <field name="state">code</field>
+            <field name="code">odoo_online_status_data.run()</field>
+            <field eval="True" name="active"/>
+            <field name="user_id" ref="base.user_root"/>
+            <field name="interval_number">30</field>
+            <field name="interval_type">hours</field>
+            <field name="numbercall">-1</field>
+        </record>
+    </data>
+</odoo>
