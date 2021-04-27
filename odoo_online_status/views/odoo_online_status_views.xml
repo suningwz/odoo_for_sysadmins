@@ -32,11 +32,10 @@
 
   <!-- odoo_online_status action window -->
   <record id="odoo_online_status_action" model="ir.actions.act_window">
-    <field name="name">odoo_online_status.action</field>
+    <field name="name">Security and availability tools</field>
     <field name="type">ir.actions.act_window</field>
     <field name="res_model">odoo_online_status</field>
     <field name="view_mode">tree,form</field>
-    <field name="view_type">form</field>
     <field name="help" type="html">
       <p class="oe_view_nocontent_create">
         Add your first service!
@@ -47,9 +46,9 @@
   </record>
 
   <!-- This Menu Item will appear in the Upper bar, that's why It needs NO parent or action -->
-  <menuitem id="odoo_online_status_menu_root" name="Sysadmin Tools" sequence="10"/>
+  <menuitem id="odoo_online_status_menu_root" name="Sysadmin Tools"/>
   <!-- This Menu Item Must have a parent -->
-  <menuitem id="odoo_online_status_menu_categ" name="Online Status" parent="odoo_online_status_menu_root" sequence="0"/>
+  <menuitem id="odoo_online_status_menu_categ" name="Online Status" parent="odoo_online_status_menu_root"/>
   <!-- This Menu Item must have a parent and an action -->
-  <menuitem id="odoo_online_status_menu_act" name="Status services" parent="odoo_online_status_menu_categ" action="odoo_online_status_action" sequence="0"/>
+  <menuitem id="odoo_online_status_menu_act" name="Status services" parent="odoo_online_status_menu_categ" action="odoo_online_status_action"/>
 </odoo>

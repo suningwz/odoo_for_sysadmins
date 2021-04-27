@@ -1,0 +1,106 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* odoo_online_status
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 13.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-04-25 14:51+0000\n"
+"PO-Revision-Date: 2021-04-25 14:51+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: odoo_online_status
+#: model_terms:ir.actions.act_window,help:odoo_online_status.odoo_online_status_action
+msgid "Add your first service!"
+msgstr "Añade tu primer servicio!"
+
+#. module: odoo_online_status
+#: model:ir.model.fields,field_description:odoo_online_status.field_odoo_online_status__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: odoo_online_status
+#: model:ir.model.fields,field_description:odoo_online_status.field_odoo_online_status__create_date
+msgid "Created on"
+msgstr "Creado el"
+
+#. module: odoo_online_status
+#: model:ir.model.fields,field_description:odoo_online_status.field_odoo_online_status__display_name
+msgid "Display Name"
+msgstr "Nombre a mostrar"
+
+#. module: odoo_online_status
+#: model_terms:ir.actions.act_window,help:odoo_online_status.odoo_online_status_action
+msgid "For example, you can configure a healthchecks.io account."
+msgstr "Por ejemplo, puedes configurar una cuenta de healthchecks.io"
+
+#. module: odoo_online_status
+#: model:ir.model.fields,field_description:odoo_online_status.field_odoo_online_status__id
+msgid "ID"
+msgstr "ID"
+
+#. module: odoo_online_status
+#: model:ir.model.fields,field_description:odoo_online_status.field_odoo_online_status____last_update
+msgid "Last Modified on"
+msgstr "Última modificación el"
+
+#. module: odoo_online_status
+#: model:ir.model.fields,field_description:odoo_online_status.field_odoo_online_status__last_update
+msgid "Last Update"
+msgstr "Última actualización"
+
+#. module: odoo_online_status
+#: model:ir.model.fields,field_description:odoo_online_status.field_odoo_online_status__write_uid
+msgid "Last Updated by"
+msgstr "Última actualización por"
+
+#. module: odoo_online_status
+#: model:ir.model.fields,field_description:odoo_online_status.field_odoo_online_status__write_date
+msgid "Last Updated on"
+msgstr "Última actualización el"
+
+#. module: odoo_online_status
+#: model:ir.ui.menu,name:odoo_online_status.odoo_online_status_menu_categ
+msgid "Online Status"
+msgstr "Estado en línea"
+
+#. module: odoo_online_status
+#: model:ir.actions.act_window,name:odoo_online_status.odoo_online_status_action
+msgid "Security and availability tools"
+msgstr "Herramientas de disponibilidad y seguridad"
+
+#. module: odoo_online_status
+#: model:ir.model.fields,field_description:odoo_online_status.field_odoo_online_status__service_name
+msgid "Service Name"
+msgstr "Nombre del servicio"
+
+#. module: odoo_online_status
+#: model:ir.model.fields,field_description:odoo_online_status.field_odoo_online_status__service_status
+msgid "Service Status"
+msgstr "Estado del servicio"
+
+#. module: odoo_online_status
+#: model:ir.ui.menu,name:odoo_online_status.odoo_online_status_menu_act
+msgid "Status services"
+msgstr "Estado de los servicios"
+
+#. module: odoo_online_status
+#: model:ir.ui.menu,name:odoo_online_status.odoo_online_status_menu_root
+msgid "Sysadmin Tools"
+msgstr "Herramientas para administradores de sistemas"
+
+#. module: odoo_online_status
+#: model:ir.model.fields,field_description:odoo_online_status.field_odoo_online_status__url
+msgid "Url"
+msgstr "Url"
+
+#. module: odoo_online_status
+#: model:ir.model,name:odoo_online_status.model_odoo_online_status
+msgid "odoo_online_status"
+msgstr "odoo_online_status"
